@@ -35,26 +35,6 @@ public class PersonControllerTest {
 
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    // language=JSON
-    public static final String UPDATE_PERSON_DTO = "{" +
-            " \"id\": 1," +
-            "  \"firstName\": \"Ivan\"," +
-            "  \"middleName\": \"Ivan\"," +
-            "  \"lastName\": \"Stepanov\"," +
-            "  \"address\": \"Moskva\"," +
-            "  \"phones\": [" +
-            "    {" +
-            "      \"number\": \"8 929 22 33 111\"" +
-            "    }," +
-            "    {" +
-            "      \"number\": \"8 929 22 33 222\"" +
-            "    }," +
-            "    {" +
-            "      \"number\": \"8 929 22 33 333\"" +
-            "    }" +
-            "  ]" +
-            "}";
-
     @Autowired
     protected WebApplicationContext webApplicationContext;
     protected MockMvc mockMvc;
