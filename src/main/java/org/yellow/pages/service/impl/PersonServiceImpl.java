@@ -47,20 +47,19 @@ public class PersonServiceImpl implements PersonService {
         updated.setLastName(person.getLastName());
         updated.setAddress(person.getAddress());
 
-        List<PhoneNumber> phoneNumbers = updated.getPhones();
         person.getPhones()
                 .stream()
                 .filter(phoneNumberDTO -> phoneNumberDTO.getId() == 0)
                 .map(phoneNumberDTO -> mappingUtils.mapToPhoneNumber(phoneNumberDTO, updated))
                 .forEach(updated::addPhone);
 
+        List<PhoneNumber> phoneNumbers = updated.getPhones();
         List<PhoneNumber> numbersToRemove = phoneNumbers.stream()
                 .filter(phoneNumber -> person.getPhones()
                         .stream()
                         .noneMatch(phoneNumberDTO -> phoneNumber.getId() == phoneNumberDTO.getId()))
                 .collect(Collectors.toList());
         numbersToRemove.forEach(updated::removePhone);
-        updated.setPhones(phoneNumbers);
 
         personRepository.save(updated);
         return mappingUtils.mapToPersonDTO(updated);
