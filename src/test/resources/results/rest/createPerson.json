@@ -1,0 +1,21 @@
+{
+  "id": 4,
+  "firstName": "Stepan",
+  "middleName": "Stepanovich",
+  "lastName": "Stepanov",
+  "address": "Moskva",
+  "phones": [
+    {
+      "id": 7,
+      "number": "8 929 22 33 111"
+    },
+    {
+      "id": 8,
+      "number": "8 929 22 33 222"
+    },
+    {
+      "id": 9,
+      "number": "8 929 22 33 333"
+    }
+  ]
+}
